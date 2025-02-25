@@ -14,7 +14,7 @@ export default function Navbar() {
 	];
 
 	return (
-		<nav className="border-b border-gray-800 bg-black">
+		<nav className="border-b border-gray-600">
 			<div className="container mx-auto px-4 py-3 flex items-center justify-between">
 				{/* Logo */}
 				<Link
@@ -30,9 +30,9 @@ export default function Navbar() {
 						<Link
 							key={link.href}
 							href={link.href}
-							className={`hover:text-blue-400 transition-colors ${
+							className={`hover:text-cv-accent-light transition-colors ${
 								pathname === link.href
-									? "text-blue-500 font-medium"
+									? "text-cv-accent-light font-bold"
 									: "text-gray-400"
 							}`}
 						>
@@ -44,7 +44,7 @@ export default function Navbar() {
 				{/* User settings */}
 				<Link
 					href="/settings"
-					className="p-2 rounded-md hover:bg-gray-800 transition-colors text-gray-300"
+					className="p-2 rounded-md hover:bg-gray-700 transition-colors text-gray-300"
 					aria-label="User settings"
 				>
 					<User size={20} />
