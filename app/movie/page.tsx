@@ -8,12 +8,14 @@ export const metadata: Metadata = {
 
 export default function MoviesPage() {
 	return (
-		<div className="container mx-auto px-4">
+		<div className="bg-black min-h-screen">
 			<Navbar />
-			<h1 className="text-4xl font-bold tracking-tight mt-10">Movies</h1>
-			<p className="mt-4 text-muted-foreground">
-				Discover and explore your favorite movies.
-			</p>
+			<div className="container mx-auto px-4">
+				<h1 className="text-4xl font-bold tracking-tight mt-10 text-white">Movies</h1>
+				<p className="mt-4 text-gray-400">
+					Discover and explore your favorite movies.
+				</p>
+			</div>
 		</div>
 	);
 }

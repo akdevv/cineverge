@@ -7,9 +7,9 @@
 - [x] Install and configure shadcn UI components
 - [x] Set up folder structure (pages, components, lib, utils, hooks)
 - [x] Initialize Git repository and create first commit
-- [ ] Configure environment variables for TMDB API
-- [ ] Create basic layout components (Navbar, Footer, Container)
-- [ ] Test TMDB API connection and fetch sample data
+- [x] Configure environment variables for TMDB API
+- [x] Create basic layout components (Navbar, Footer, Container)
+- [x] Test TMDB API connection and fetch sample data
 
 ## Day 2: Authentication System
 **Main Objective**: Implement user authentication

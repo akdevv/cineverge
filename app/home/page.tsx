@@ -8,12 +8,14 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
 	return (
-		<div className="container mx-auto px-4">
+		<div className="bg-black min-h-screen">
 			<Navbar />
-			<h1 className="text-4xl font-bold tracking-tight mt-10">Home</h1>
-			<p className="mt-4 text-muted-foreground">
-				Welcome to Cineverse, your personal entertainment center.
-			</p>
+			<div className="container mx-auto px-4">
+				<h1 className="text-4xl font-bold tracking-tight mt-10 text-white">Home</h1>
+				<p className="mt-4 text-gray-400">
+					Welcome to Cineverse, your personal entertainment center.
+				</p>
+			</div>
 		</div>
 	);
 }
