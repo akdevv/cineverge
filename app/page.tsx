@@ -19,7 +19,7 @@ export default function RootPage() {
 						size="lg"
 						className="bg-cv-accent hover:bg-cv-accent/80 text-cv-primary transition-colors duration-300"
 					>
-						<Link href="/login">Sign In</Link>
+						<Link href="/login">Login</Link>
 					</Button>
 					<Button size="lg" variant="outline">
 						<Link href="/register">Register</Link>
