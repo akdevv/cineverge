@@ -14,8 +14,8 @@
 ## Day 2: Authentication System
 **Main Objective**: Implement user authentication
 
-- [ ] Install and configure NextAuth.js
-- [ ] Create sign-up page with form validation
+- [x] Install and configure NextAuth.js
+- [x] Create sign-up page with form validation
 - [ ] Implement login functionality with error handling
 - [ ] Create logout functionality
 - [ ] Set up protected routes with middleware
