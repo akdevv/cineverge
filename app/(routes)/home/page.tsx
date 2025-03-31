@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+"use client";
+
+import { useSession } from "next-auth/react";
 import Navbar from "@/components/shared/navbar";
 
-export const metadata: Metadata = {
-	title: "Home | Cineverse",
-	description: "Welcome to Cineverse - your entertainment hub",
-};
-
 export default function HomePage() {
+	const { data: session } = useSession();
+	console.log(session);
+
 	return (
 		<div className="min-h-screen">
 			<Navbar />

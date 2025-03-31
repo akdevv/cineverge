@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import type React from "react";
@@ -6,15 +8,22 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { register } from "@/server/actions";
+import { useActionState } from "react";
 
 export function RegisterForm({
 	className,
 	...props
 }: React.ComponentProps<"div">) {
+	const [state, formAction] = useActionState(register, null);
+
 	return (
 		<Card className="w-full overflow-hidden bg-cv-background text-cv-primary">
 			<CardContent className="grid p-0 md:grid-cols-2">
-				<form className="flex flex-col gap-6 p-6 md:p-8">
+				<form
+					action={formAction}
+					className="flex flex-col gap-6 p-6 md:p-8"
+				>
 					<div className="flex flex-col items-start">
 						<h1 className="text-3xl font-bold">
 							Create an account
@@ -27,6 +36,7 @@ export function RegisterForm({
 						<Label htmlFor="name">Name</Label>
 						<Input
 							id="name"
+							name="name"
 							type="text"
 							placeholder="John Doe"
 							required
@@ -36,6 +46,7 @@ export function RegisterForm({
 						<Label htmlFor="email">Email</Label>
 						<Input
 							id="email"
+							name="email"
 							type="email"
 							placeholder="m@example.com"
 							required
@@ -46,11 +57,15 @@ export function RegisterForm({
 						<Label htmlFor="password">Password</Label>
 						<Input
 							id="password"
+							name="password"
 							type="password"
 							required
 							className="bg-cv-background text-cv-primary"
 						/>
 					</div>
+					{state?.error && (
+						<p className="text-red-500">{state.error}</p>
+					)}
 					<Button
 						type="submit"
 						className="w-full bg-cv-accent text-cv-primary hover:bg-cv-accent/90"
