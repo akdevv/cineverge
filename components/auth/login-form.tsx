@@ -9,19 +9,23 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { login } from "@/server/actions";
-import { useActionState } from "react";
+import { useActionState, useTransition } from "react";
 
-export function LoginForm({
-	className,
-	...props
-}: React.ComponentProps<"div">) {
+export function LoginForm() {
+	const [isPending, startTransition] = useTransition();
 	const [state, formAction] = useActionState(login, null);
 
 	return (
 		<Card className="w-full overflow-hidden bg-cv-background text-cv-primary">
 			<CardContent className="grid p-0 md:grid-cols-2">
 				<form
-					action={formAction}
+					onSubmit={(e) => {
+						e.preventDefault();
+						const form = e.currentTarget;
+						startTransition(() => {
+							formAction(new FormData(form));
+						});
+					}}
 					className="flex flex-col gap-6 p-6 md:p-8"
 				>
 					<div className="flex flex-col items-start">
@@ -66,7 +70,7 @@ export function LoginForm({
 						type="submit"
 						className="w-full bg-cv-accent text-cv-primary hover:bg-cv-accent/90"
 					>
-						Login
+						{isPending ? "Logging in..." : "Login"}
 					</Button>
 					<div className="relative text-center text-sm">
 						<span className="bg-cv-background px-2 text-cv-primary-dark relative z-10">
