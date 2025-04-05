@@ -3,14 +3,14 @@ export type User = {
 	name?: string | null;
 	email: string;
 	password?: string | null;
+	image?: string | null;
 	createdAt: Date;
 	updatedAt: Date;
-	
+
 	// Authentication metadata
 	lastLoginAt?: Date | null;
 	lastLoginIp?: string | null;
 	lastLoginUserAgent?: string | null;
-	isActive: boolean;
 };
 
 export type Session = {

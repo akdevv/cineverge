@@ -18,6 +18,7 @@ model User {
   email     String   @unique
   name      String?
   password  String?
+  image     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -25,8 +26,7 @@ model User {
   lastLoginAt   DateTime?
   lastLoginIp   String?
   lastLoginUserAgent String?
-  isActive      Boolean   @default(false)
-  
+    
   // Relations
   sessions      Session[]
 }
